@@ -1,15 +1,27 @@
+# package managers
+/vendor
 /node_modules
+npm-debug.log
+yarn-error.log
+
+# public
 /public/hot
 /public/storage
+/public/css
+/public/js
+/public/mix-manifest.json
+
+# storage
 /storage/*.key
-/vendor
+
+# config & testing
 .env
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml
 Homestead.json
 Homestead.yaml
-npm-debug.log
-yarn-error.log
+
+# ide's
 /.idea
 /.vscode
