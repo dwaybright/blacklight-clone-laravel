@@ -11,6 +11,18 @@ window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
+ * Load jquery & bootstrap
+ */
+try {
+    window.$ = require('jquery');
+    window.Popper = require('popper.js');
+    require('bootstrap');
+} catch (error) {
+    console.log(error);
+}
+
+/**
+ * 
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
