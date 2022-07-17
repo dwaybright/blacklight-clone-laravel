@@ -10,5 +10,11 @@ return [
                 'core' => 'testing',
             ],
         ],
+        'facetFields' => [
+            'pubyear',
+            'authors',
+            'country',
+            'format',
+        ],
     ],
 ];
