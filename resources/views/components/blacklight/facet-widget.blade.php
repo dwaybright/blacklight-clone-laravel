@@ -1,3 +1,5 @@
 <div>
-    <!-- Because you are alive, everything is possible. - Thich Nhat Hanh -->
+    @foreach($facetResults as $facetField => $facetResult)
+        <x-blacklight.facet-box :selectedFacets="$selectedFacets" :facetField="$facetField" :facetResult="$facetResult" :baseQuery="$baseQuery" />
+    @endforeach
 </div>

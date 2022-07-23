@@ -1,17 +1,21 @@
-<div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Collapsible Group Item #1
-        </button>
-      </h2>
-    </div>
+<div class="accordion mb-2" id="accordion_{{ $facetField }}">
+    <div class="card">
+        <div class="card-header" id="heading_{{ $facetField }}">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_{{ $facetField }}" aria-expanded="true" aria-controls="collapse_{{ $facetField }}">
+                    {{ $facetField }}
+                </button>
+            </h2>
+        </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
-        Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the <code>.show</code> class.
-      </div>
+        <div id="collapse_{{ $facetField }}" class="collapse @if($containsSelectedFacets) show @endif" aria-labelledby="heading_{{ $facetField }}" data-parent="#accordion_{{ $facetField }}">
+            <div class="card-body">
+                <ui>
+                    @foreach($facetResult as $value => $count)
+                    <x-blacklight.facet-link :field="$facetField" :selected="in_array($value, $selectedFacetLinks)" :value="$value" :count="$count" :baseQuery="$baseQuery" />
+                    @endforeach
+                </ui>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

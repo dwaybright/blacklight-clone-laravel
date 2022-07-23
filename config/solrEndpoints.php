@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'active' => 'testing',
     'testing' => [
         'endpoint' => [
             'testing' => [

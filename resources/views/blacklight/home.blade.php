@@ -4,14 +4,14 @@
 <div class="container">
     <form method="get" action="{{ route('blacklight.search') }}" >
         <div class="row">
-            <x-search-bar />
+            <x-search-bar q="" />
         </div>
 
         <div class="row">
-            <div class="col-3">
-                <x-blacklight.facet-widget />
+            <div class="col-4">
+                <x-blacklight.facet-widget :selectedFacets="$selectedFacets ?? []" :baseQuery="$baseQuery" :solrResult="$solrResult" />
             </div>
-            <div class="col-9">
+            <div class="col-8">
                 <x-landing />
             </div>
         </div>
