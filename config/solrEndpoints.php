@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'active' => 'testing',
     'testing' => [
         'endpoint' => [
             'testing' => [
@@ -9,6 +10,12 @@ return [
                 'path' => '/',
                 'core' => 'testing',
             ],
+        ],
+        'facetFields' => [
+            'pubyear',
+            'authors',
+            'country',
+            'format',
         ],
     ],
 ];
