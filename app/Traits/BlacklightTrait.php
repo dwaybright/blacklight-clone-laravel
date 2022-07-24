@@ -60,25 +60,4 @@ trait BlacklightTrait {
 
         return $result;
     }
-
-    private function executeHomePageSelect(): Result {
-        // define and open solr client
-        $solrClient = $this->buildSolrClient();
-
-        // solr select query
-        $query = $solrClient->createSelect();
-
-        // set rows to 1
-        $query->setRows(0);
-
-        // load facet fields into query
-        foreach(config('solrEndpoints.testing.facetFields') as $facetField) {
-            $query->getFacetSet()->createFacetField($facetField)->setField($facetField);
-        }
-
-        // execute query
-        $result = $solrClient->select($query);
-
-        return $result;
-    }
 }

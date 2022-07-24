@@ -11,7 +11,7 @@ class BlacklightController extends Controller
     use BlacklightTrait;
 
     public function show() {
-        $result = $this->executeHomePageSelect();
+        $result = $this->executeSolrSearch('', [], 0, 0);
 
         return view('blacklight.home', [
             'baseQuery' => route('blacklight.search', [

@@ -8,10 +8,10 @@
         </div>
 
         <div class="row">
-            <div class="col-3">
+            <div class="col-4">
                 <x-blacklight.facet-widget :selectedFacets="$selectedFacets" :baseQuery="$baseQuery" :solrResult="$solrResult" />
             </div>
-            <div class="col-9">
+            <div class="col-8">
                 <x-search-results />
             </div>
         </div>
