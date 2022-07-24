@@ -12,7 +12,9 @@
             <div class="card-body">
                 <ui>
                     @foreach($facetResult as $value => $count)
+                    @if($count > 0)
                     <x-blacklight.facet-link :field="$facetField" :selected="in_array($value, $selectedFacetLinks)" :value="$value" :count="$count" :baseQuery="$baseQuery" />
+                    @endif
                     @endforeach
                 </ui>
             </div>

@@ -22,10 +22,12 @@ class BlacklightController extends Controller
         ]);
     }
 
-    public function search(BlacklightSearchRequest $request) {
-        $result = $this->executeHomePageSelect();
+    public function search(BlacklightSearchRequest $request)
+    {
+        $searchQuery = $request->q ?? '';
+        $facets = $request->f ?? [];
 
-        $facets = $request->f;
+        $result = $this->executeSolrSearch($searchQuery, $facets, 10, 0);
 
         return view('blacklight.search', [
             'q' => $request->q ?? '',
