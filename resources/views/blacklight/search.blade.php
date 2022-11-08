@@ -12,7 +12,7 @@
                 <x-blacklight.facet-widget :selectedFacets="$selectedFacets" :baseQuery="$baseQuery" :solrResult="$solrResult" />
             </div>
             <div class="col-8">
-                <x-search-results />
+                <x-search-results :solrResult="$solrResult" />
             </div>
         </div>
     </form>
