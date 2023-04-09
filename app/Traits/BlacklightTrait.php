@@ -40,7 +40,7 @@ trait BlacklightTrait {
 
         // add blacklight search q
         if(!empty($search)) {
-            array_push($solrSearchSections, $search);
+            array_push($solrSearchSections, config('solrEndpoints.testing.defaultSearchField') . ':' . $search);
         }
 
         // add selected facets
