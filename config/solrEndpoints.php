@@ -11,6 +11,7 @@ return [
                 'core' => 'testing',
             ],
         ],
+        'defaultSearchField' => 'all',
         'facetFields' => [
             'pubyear',
             'authors',
