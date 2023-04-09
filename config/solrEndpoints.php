@@ -16,6 +16,12 @@ return [
             'authors',
             'country',
             'format',
+            'topic',
+        ],
+        'searchResultFields' => [
+            'title',
+            'format',
+            'topic',
         ],
     ],
 ];
